@@ -1,0 +1,53 @@
+<head>
+    <title>Classmate Details</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: url('https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1cYWdlfHx8fGVufDB8fHx8fA%3D%3D') center/cover fixed no-repeat;
+            margin: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .details {
+            text-align: center;
+            background-color: transparent; /* Make the background transparent */
+            padding: 40px; /* Increase the padding for bigger content */
+            border-radius: 5px;
+            box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+            transition: background-color 0.3s;
+        }
+
+        .details:hover {
+            background-color: #f0f0f0;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 24px; /* Increase the font size */
+        }
+
+        h2 {
+            margin: 0;
+            padding: 10px 0;
+            font-size: 18px; /* Increase the font size */
+        }
+
+        p {
+            margin: 0;
+            padding: 10px 0; /* Increase the padding */
+            font-size: 16px; /* Increase the font size */
+        }
+    </style>
+</head>
+<body>
+    <div class="details">
+        <h1>Classmate Details</h1>
+        <h2>Name: {{ object.firstname }} {{ object.lastname }}</h2>
+        <p>Age: {{ object.age }}</p>
+        <p>Address: {{ object.address }}</p>
+        <p>Gender: {{ object.get_gender_display }}</p>
+    </div>
+</body>

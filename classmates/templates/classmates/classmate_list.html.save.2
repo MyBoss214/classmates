@@ -1,0 +1,85 @@
+<style>
+.details{
+
+display:grid;
+grid-template-columns: repeat(8, 1fr);
+width:100%;
+}
+.details_content{
+
+
+padding-bottom: 20px; border: 2px solid #393E46; background-color:#EEEEEE; 
+display:flex;  justify-content:center; 
+}
+</style>
+
+
+
+<div style="
+
+display:grid;
+grid-template-rows:1fr 400px 1fr;
+align-content:center;
+justify-content:center;
+height:80%;
+
+">
+
+
+<h1 style="
+display:flex;
+align-items:center;
+justify-content:center;
+
+">Classmates</h1>
+
+<table border="1"
+
+style="
+
+width:1000px;
+
+"
+
+
+>
+<thead>
+    <tr class="details">
+    <th>Firstname</th>
+    <th>Lastname</th>
+    <th>Age</th>
+    <th>Address</th>
+    <th>Gender</th>
+    <th>View</th>
+    <th>Edit</th>
+    <th>Delete</th>
+    </tr>
+</thead>
+<tbody>
+    {% for classmate in object_list %}
+    <tr>
+    <td>{{ classmate.firstname }}</td>
+    <td>{{ classmate.lastname }}</td>
+    <td>{{ classmate.age }}</td>
+    <td>{{ classmate.address }}</td>
+    <td>{{ classmate.gender }}</td>
+    <td><a href="{% url "classmate_view" classmate.id %}">view</a></td>
+    <td><a href="{% url "classmate_edit" classmate.id %}">edit</a></td>
+    <td><a href="{% url "classmate_delete" classmate.id %}">delete</a></td>
+    </tr>
+    {% endfor %}
+</tbody>
+</table>
+
+<a href="{% url "classmate_new" %}"
+
+style="
+display:flex;
+align-items:center;
+justify-content:center;
+
+"
+
+>New</a>
+</div>
+
